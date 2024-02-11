@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+
+
+
+  <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
   <head>
@@ -7,19 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <!-- ===============================================-->
-    <!--    Document Title-->
-    <!-- ===============================================-->
-    <title>Connect_Hub</title>
+    <title>ServiceFinder</title>
 
 
-    <!-- ===============================================-->
+
     <!--    Favicons-->
     <!-- ===============================================-->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('public/assets/img/favicons/apple-touch-icon.png') }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('public/assets/img/favicons/favicon-32x32.png') }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('public/assets/img/favicons/favicon-16x16.png') }}">
-<link rel="shortcut icon" type="image/x-icon" href="{{ asset('public/assets/img/favicons/favicon.ico') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('public/assets/img/favicons/logo.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('public/assets/img/favicons/logo.png') }}">
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('public/assets/img/favicons/logo.png') }}">
 <link rel="manifest" href="{{ asset('public/assets/img/favicons/manifest.json') }}">
 
     <meta name="msapplication-TileImage" content="public/assets/img/favicons/mstile-150x150.png">
@@ -34,7 +34,7 @@
   </head>
 
 
-  <body>
+  <body  style="background:url('/images/city-illuminate-by-sun.jpg') center/cover;">
 
     <!-- ===============================================-->
     <!--    Main Content-->
@@ -42,8 +42,9 @@
     <main class="main" id="top">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 backdrop" data-navbar-on-scroll="data-navbar-on-scroll">
         <div class="container"><a class="navbar-brand d-flex align-items-center fw-bolder fs-2" href="#">
-            <div class="text-info">Connect</div>
-            <div class="text-warning">Hub</div>
+        <img src="/public/assets/img/logo.png" alt="Service Finder Logo" style="max-height: 40px;">
+            <div class="text-info">Service</div>
+            <div class="">Finder</div>
           </a>
           <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
@@ -70,170 +71,61 @@
 
         <div class="container">
           <div class="row align-items-center min-vh-75 min-vh-md-100">
-            <div class="col-md-7 col-lg-6 py-6 text-sm-start text-center">
+            <div class="col-md-9 col-lg-6 py-6 text-sm-start text-center">
               <h1 class="mt-6 mb-sm-4 display-2 fw-semi-bold lh-sm fs-4 fs-lg-6 fs-xxl-8">Find your service Providers better <br class="d-block d-lg-none d-xl-block" />and faster</h1>
-              <p class="mb-4 fs-1">Get served better and faster with Connect Hub</p>
-              <div class="pt-3">
-                <form>
-                  <div class="input-group w-xl-75 w-xxl-50 d-flex flex-end-center">
-                    <input class="form-control rounded-pill shadow-lg border-0" id="formGroupExampleInput" type="text" placeholder="Seacrh by skill, company and job" /><img class="input-box-icon me-2" src="assets/img/illustrations/search.png" width="30" alt="" />
-                  </div>
-                </form>
+              <p class="mb-4 fs-1">Get served better and faster with Our Service Finder</p>
+              <div class="pt-4">
+                      
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="py-5">
-        <div class="bg-holder" style="background-image:url(assets/img/illustrations/bg.png);background-position:left top;background-size:initial;margin-top:-180px;">
-        </div>
-        <!--/.bg-holder-->
-
-        <div class="container">
-          <div class="row flex-center">
-            <div class="col-md-5 order-md-0 text-center text-md-start"><img class="img-fluid mb-4" src="public/assets/img/illustrations/passion.png" width="450" alt="" /></div>
-            <div class="col-md-5 text-center text-md-start">
-              <h6 class="fw-bold fs-2 fs-lg-3 display-3 lh-sm">Find your passion and<br />achieve success</h6>
-              <p class="my-4 pe-xl-8"> find a job that suits your interests and talents. A high salary is not the top priority. Most importantly,You can work according to your heart's desire.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
 
       <!-- ============================================-->
       <!-- <section> begin ============================-->
-      <section class="py-0">
-
-        <div class="container">
-
-
-          <!-- ============================================-->
-          <!-- <section> begin ============================-->
-          <section class="py-8">
-
-            <div class="container">
-              <div class="row flex-center">
-                <div class="col-md-5 order-md-1 text-center text-md-end"><img class="img-fluid mb-4" src="public//img/illustrations/jobs.png" width="450" alt="" /></div>
-                <div class="col-md-5 text-center text-md-start">
-                  <h6 class="fw-bold fs-2 fs-lg-3 display-3 lh-sm">Million of jobs, finds <br> the one thats rights for you</h6>
-                  <p class="my-4 pe-xl-8">Get your blood tests delivered at home collect a sample from the news your blood tests.</p>
-                </div>
-              </div>
-            </div>
-            <!-- end of .container-->
-
-          </section>
-          <!-- <section> close ============================-->
-          <!-- ============================================-->
-
-
-        </div>
+     
         <!-- end of .container-->
 
-      </section>
       <!-- <section> close ============================-->
       <!-- ============================================-->
 
 
       <section class="py-5">
-        <div class="bg-holder d-none d-sm-block" style="background-image:url(public/assets/img/illustrations/category-bg.png);background-position:right top;background-size:200px 320px;">
-        </div>
-        <!--/.bg-holder-->
-
-        <div class="container">
-          <div class="row justify-content-center">
+    <div class="container">
+        <div class="row justify-content-center">
             <div class="col-md-9 col-lg-6 text-center mb-3">
-              <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Browse jobs by category</h5>
-              <p class="mb-5">Choose from the list of most popular categories</p>
+                <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Browse Services by category</h5>
+                <p class="mb-5">Choose from the list of most popular Services</p>
             </div>
-          </div>
-          <div class="row flex-center h-100">
+        </div>
+        <div class="row flex-center h-100">
             <div class="col-10 col-xl-9">
-              <div class="row">
-                <div class="col-sm-6 col-lg-4 pb-lg-6 px-lg-4 pb-4">
-                  <div class="card py-4 shadow-sm h-100 hover-top">
-                    <div class="text-center"> <img src="public/assets/img/illustrations/finance.png" height="120" alt="" />
-                      <div class="card-body px-2">
-                        <h6 class="fw-bold fs-1 heading-color">Accounting</h6>
-                        <p class="mb-0 card-text">100 open position</p>
-                      </div>
+                <div class="row">
+                    @foreach($serviceCategories as $category)
+                    <div class="col-sm-6 col-lg-4 pb-lg-6 px-lg-4 pb-4">
+                        <div class="card py-4 shadow-sm h-100 hover-top">
+                            <a href="{{ route('service.category', ['id' => $category->id]) }}"> <!-- Modify route name as per your application -->
+                                <div class="text-center">
+                                    <img src="{{ asset('public/assets/img/illustrations/' . $category->image) }}" height="120" alt="">
+                                    <div class="card-body px-2">
+                                        <h6 class="fw-bold fs-1 heading-color" style="text-decoration:none">{{ $category->name }}</h6>
+                                        <p class="mb-0 card-text" style="text-decoration:none">{{ $category->services->count() }} Services Recorded</p>                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                  </div>
+                    @endforeach
                 </div>
-                <div class="col-sm-6 col-lg-4 pb-lg-6 px-lg-4 pb-4">
-                  <div class="card py-4 shadow-sm h-100 hover-top">
-                    <div class="text-center"> <img src="public/assets/img/illustrations/design.png" height="120" alt="" />
-                      <div class="card-body px-2">
-                        <h6 class="fw-bold fs-1 heading-color">Design/Creative</h6>
-                        <p class="mb-0 card-text">100 open position</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 pb-lg-6 px-lg-4 pb-4">
-                  <div class="card py-4 shadow-sm h-100 hover-top">
-                    <div class="text-center"> <img src="public/assets/img/illustrations/programmer.png" height="120" alt="" />
-                      <div class="card-body px-2">
-                        <h6 class="fw-bold fs-1 heading-color">Programmer</h6>
-                        <p class="mb-0 card-text">100 open position</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 pb-lg-6 px-lg-4 pb-4">
-                  <div class="card py-4 shadow-sm h-100 hover-top">
-                    <div class="text-center"> <img src="public/assets/img/illustrations/production.png" height="120" alt="" />
-                      <div class="card-body px-2">
-                        <h6 class="fw-bold fs-1 heading-color">Production</h6>
-                        <p class="mb-0 card-text">100 open position</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 pb-lg-6 px-lg-4 pb-4">
-                  <div class="card py-4 shadow-sm h-100 hover-top">
-                    <div class="text-center"> <img src="public/assets/img/illustrations/education.png" height="120" alt="" />
-                      <div class="card-body px-2">
-                        <h6 class="fw-bold fs-1 heading-color">Education</h6>
-                        <p class="mb-0 card-text">100 open position</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 pb-lg-6 px-lg-4 pb-4">
-                  <div class="card py-4 shadow-sm h-100 hover-top">
-                    <div class="text-center"> <img src="public/assets/img/illustrations/consultancy.png" height="120" alt="" />
-                      <div class="card-body px-2">
-                        <h6 class="fw-bold fs-1 heading-color">Consultancy</h6>
-                        <p class="mb-0 card-text">100 open position</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </section>
+    </div>
+</section>
 
 
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="py-8">
 
-        <div class="container">
-          <div class="row flex-center">
-            <div class="col-md-5 order-md-1 text-center text-md-end"><img class="img-fluid mb-4" src="public/assets/img/illustrations/feature.png" width="450" alt="" /></div>
-            <div class="col-md-5 text-center text-md-start">
-              <h6 class="fw-bold fs-2 fs-lg-3 display-3 lh-sm">Over 10,000 top <br> companies join with us</h6>
-              <p class="my-4 pe-xl-8">Posting now includes out of the box integration with major CRM &amp;amp; accounting and ERP platforms, as well as an open API that allows you to seamlessly integrate with your business systems.</p>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-
-      </section>
       <!-- <section> close ============================-->
       <!-- ============================================-->
 
@@ -713,6 +605,22 @@
     <!--    End of Main Content-->
     <!-- ===============================================-->
 
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get all service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+
+    // Add click event listener to each service card
+    serviceCards.forEach(function(card) {
+      card.addEventListener('click', function() {
+        // Get service details from the clicked card
+        const serviceName = card.querySelector('.service-name').innerText;
+        // Redirect to the location selection page with service information
+        window.location.href = `location_selection.html?service=${encodeURIComponent(serviceName)}`;
+      });
+    });
+  });
+</script>
 
 
 

@@ -8,8 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 class ServiceProvider extends Model
 {
     use HasFactory;
-    protected $fillable = ['service_providers'
+    protected $table = 'service_providers';
+    protected $fillable = [
+        'user_id', // Include user_id here if it should be mass assignable
+        'county_id',
+        'subcounty_id',
+        'ward_id',
+        'area_id',
+        'contact_information',
+        'profile_pic',
+        'gender',
+        'qualifications',
+        'business_name',
+        'business_description',
+        'website',
+        'service_category_id',
+        'service_id',
+        // Add other attributes here if needed
     ];
+    
 
     // Add relationships if needed
 
@@ -32,4 +49,16 @@ class ServiceProvider extends Model
     {
         return $this->belongsTo(Area::class);
     }
+
+    public function user()
+{
+    return $this->belongsTo(User::class);
+}
+
+  
+public function service()
+{
+    return $this->belongsTo(Service::class);
+}
+
 }

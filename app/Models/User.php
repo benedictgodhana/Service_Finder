@@ -59,10 +59,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Activity::class);
     }
-    public function doctor()
-{
-    return $this->hasOne(Doctor::class);
-}
-
+    public function serviceProvider(): HasOne
+    {
+        return $this->hasOne(ServiceProvider::class);
+    }
    
 }

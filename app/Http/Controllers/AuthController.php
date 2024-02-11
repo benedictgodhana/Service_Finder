@@ -5,6 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Activity;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\County;
+use App\Models\Subcounty;
+use App\Models\Ward;
+use App\Models\Area;
+use App\Models\ServiceProvider;
+
+
+
+use App\Models\ServiceCategory;
+use App\Models\Service;
+
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -216,7 +227,99 @@ class AuthController extends Controller
 public function loadRegister()
 {
 
-    return view('register');
+
+    $serviceCategories  = ServiceCategory::all();
+    $counties = County::all(); // Fetch all counties from the database or from wherever you get the data
+    $subcounties =Subcounty::all(); // Fetch all counties from the database or from wherever you get the data
+    $wards = Ward::all(); // Fetch all counties from the database or from wherever you get the data
+    $areas = Area::all(); // Fetch all counties from the database or from wherever you get the data
+
+
+    return view('register',compact('serviceCategories','counties','subcounties','wards','areas'));
+}
+
+public function getSubcountiesByCounty(Request $request)
+{
+    $countyId = $request->input('county_id');
+    $subcounties = Subcounty::where('county_id', $countyId)->get();
+
+    return response()->json($subcounties);
+}
+public function getWardsBySubcounty(Request $request)
+{
+    $subcountyId = $request->input('subcounty_id');
+    $wards = Ward::where('subcounty_id', $subcountyId)->get();
+
+    return response()->json($wards);
+}
+
+public function getAreasByWard(Request $request)
+{
+    $wardId = $request->input('ward_id');
+    $areas = Area::where('ward_id', $wardId)->get();
+
+    return response()->json($areas);
+}
+public function getServices($categoryId)
+{
+    // Retrieve services based on the provided category ID
+    $services = Service::where('category_id', $categoryId)->get();
+
+    // Return services as JSON response
+    return response()->json($services);
+}
+public function store(Request $request)
+{
+        // Validate the incoming request data
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'role' => 'required|string',
+            'password' => 'required|string|min:8',
+            
+            
+            
+        ]);
+
+        // Debug to check the form data
+
+        // Continue with your code to process the form data
+        // Create a new user instance
+        $user = new User();
+        $user->name = $validatedData['name'];
+        $user->email = $validatedData['email'];
+        $user->role = $validatedData['role'];
+        $user->password = Hash::make($validatedData['password']);
+        $user->save();
+
+        $userId = $user->id;
+
+
+        // Create a new ServiceProvider instance
+        $serviceProvider = new ServiceProvider();
+        $serviceProvider->user_id = $userId; // Assign the user_id
+        $serviceProvider->county_id = $request->input('county_id');
+        $serviceProvider->subcounty_id = $request->input('subcounty_id');
+        $serviceProvider->ward_id = $request->input('ward_id');
+        $serviceProvider->area_id = $request->input('area_id');
+        $serviceProvider->contact_information = $request->input('contact_information');
+        // Handle profile picture upload
+        if ($request->hasFile('profile_pic')) {
+            $profilePicPath = $request->file('profile_pic')->store('profile_pics', 'public');
+            $serviceProvider->profile_pic = $profilePicPath;
+        }
+        $serviceProvider->gender = $request->input('gender');
+        $serviceProvider->qualifications = $request->input('qualifications');
+        $serviceProvider->business_name = $request->input('business_name');
+        $serviceProvider->business_description = $request->input('business_description');
+        $serviceProvider->website = $request->input('website');
+        $serviceProvider->service_category_id = $request->input('service_category_id');
+        $serviceProvider->service_id = $request->input('service_id');
+        $serviceProvider->save();
+
+        return redirect()->back()->with('success', 'Service provider created successfully.');
+        // Redirect or return response
+   
 }
 
 }

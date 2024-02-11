@@ -19,6 +19,10 @@ use App\Http\Controllers\ResetController;
 use App\Models\Appointment;
 use App\Models\Room;
 use App\Models\User;
+use App\Models\ServiceCategory;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServiceCategoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,11 +35,7 @@ use App\Models\User;
 |
 */
 
-Route::get('/', function () {
-    
-
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/register', [AuthController::class, 'loadRegister']);
 Route::post('/register', [AuthController::class, 'register'])->name('register');
@@ -46,7 +46,10 @@ Route::get('/login', [AuthController::class, 'loadLogin'])->name('LoginPage');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::post('/login/validate', [AuthController::class, 'validateLogin'])->name('login.validate');
-
+Route::post('/service-providers', [AuthController::class, 'store'])->name('service-providers.store');
+Route::get('/service-categories', [ServiceCategoryController::class, 'index'])->name('service-categories.index');
+Route::get('/service-categories/{id}', [ServiceCategoryController::class, 'show'])->name('service-categories.show');
+Route::get('/service-categories/{id}', [ServiceCategoryController::class,'show'])->name('service.category');
 
 
 
@@ -219,3 +222,16 @@ Route::put('/reservations/{id}', [ReservationController::class,'updateReservatio
 Route::get('/user-guide-pdf', [UserController::class, 'generateUserGuidePdf'])->name('user-guide-pdf');
 Route::get('custom-reset', [ResetController::class, 'showResetForm'])->name('custom-reset');
 Route::post('/update-password', [ResetController::class, 'updatePassword'])->name('update-password');
+Route::get('/get-subcounties-by-county', [ServiceCategoryController::class, 'getSubcountiesByCounty'])->name('getSubcountiesByCounty');
+Route::get('/get-wards-by-subcounty', [ServiceCategoryController::class, 'getWardsBySubcounty'])->name('getWardsBySubcounty');
+Route::get('/get-areas-by-ward', [ServiceCategoryController::class, 'getAreasByWard'])->name('getAreasByWard');
+Route::get('/search-service-providers', [ServiceCategoryController::class, 'searchServiceProviders'])->name('searchServiceProviders');
+Route::get('/get-subcounties-by-county', [AuthController::class, 'getSubcountiesByCounty'])->name('getSubcountiesByCounty');
+Route::get('/get-wards-by-subcounty', [AuthController::class, 'getWardsBySubcounty'])->name('getWardsBySubcounty');
+Route::get('/get-areas-by-ward', [AuthController::class, 'getAreasByWard'])->name('getAreasByWard');
+// routes/web.php
+Route::get('/get-services/{categoryId}', [AuthController::class,'getServices']);
+
+
+
+

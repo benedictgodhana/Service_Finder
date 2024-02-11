@@ -24,11 +24,9 @@ class CreateServiceProvidersTable extends Migration
             $table->string('profile_pic')->nullable();
             $table->enum('gender', ['male', 'female', 'other'])->nullable();
             $table->string('qualifications')->nullable();
-            $table->string('specializations')->nullable();
             $table->string('business_name')->nullable();
             $table->string('business_description')->nullable();
             $table->string('website')->nullable();
-            $table->string('services_offered')->nullable();
             // ... (other fields)
             $table->timestamps();
         });
