@@ -5,10 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Activity;
 use App\Models\Department;
 use App\Models\Item;
-use App\Models\Appointment;
+use App\Models\Reservation  ;
 use App\Models\Room;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Ward;
+use App\Models\Area;
+use App\Models\ServiceProvider;
+use App\Models\County;
+use App\Models\Subcounty;
 use App\Notifications\BookingAcceptedNotification;
 use App\Notifications\BookingDeclinedNotification;
 use Carbon\Carbon;
@@ -24,13 +29,20 @@ class SubAdminController extends Controller
     //
     public function dashboard()
     {
+        $customerCount = User::where('role', '0')->count();
+        $service_providerCount = User::where('role', '2')->count();
+        $countyCount = County::count();
+        $subcountyCount = Subcounty::count();
+        $wardCount = Ward::count();
+        $AreaCount = Area::count();
+        $activities = Activity::orderBy('created_at', 'desc')->paginate(7);    
+        return view('sub-admin.dashboard', compact('customerCount', 'service_providerCount','activities','countyCount','subcountyCount','wardCount','AreaCount'));
        
 
-        return view('sub-admin.dashboard');
     }
     public function reservation()
     {
-        $Reservations = Appointment::All();
+        $Reservations = Reservation::All();
        
         return view('sub-admin.reservation', compact('Reservations'));
     }

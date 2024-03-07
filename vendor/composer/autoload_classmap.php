@@ -73,7 +73,6 @@ return array(
     'App\\Mail\\WelcomeEmail' => $baseDir . '/app/Mail/WelcomeEmail.php',
     'App\\Mail\\activationmail' => $baseDir . '/app/Mail/activationmail.php',
     'App\\Models\\Activity' => $baseDir . '/app/Models/Activity.php',
-    'App\\Models\\Appointment' => $baseDir . '/app/Models/Appointment.php',
     'App\\Models\\Area' => $baseDir . '/app/Models/Area.php',
     'App\\Models\\County' => $baseDir . '/app/Models/County.php',
     'App\\Models\\Customer' => $baseDir . '/app/Models/Customer.php',

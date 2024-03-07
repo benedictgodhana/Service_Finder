@@ -697,7 +697,6 @@ class ComposerStaticInite9b03290f88a9c6e4c697fe7a71d1c4e
         'App\\Mail\\WelcomeEmail' => __DIR__ . '/../..' . '/app/Mail/WelcomeEmail.php',
         'App\\Mail\\activationmail' => __DIR__ . '/../..' . '/app/Mail/activationmail.php',
         'App\\Models\\Activity' => __DIR__ . '/../..' . '/app/Models/Activity.php',
-        'App\\Models\\Appointment' => __DIR__ . '/../..' . '/app/Models/Appointment.php',
         'App\\Models\\Area' => __DIR__ . '/../..' . '/app/Models/Area.php',
         'App\\Models\\County' => __DIR__ . '/../..' . '/app/Models/County.php',
         'App\\Models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',

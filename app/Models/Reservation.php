@@ -8,50 +8,40 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Reservation extends Model
 {
-    use HasFactory;
     protected $fillable = [
-        'user_id',
-        'room_id',
-        'reservationDate',
-        'reservationTime',
-        'timelimit',
-        'capacity',
-        'event',
-        'itServices',
-        'setupAssistance',
-        'comment',
-        'additional_details',
-        'meal_setup_details',
-
+        'customer_id',
+        'service_provider_id',
+        'service_id',
+        'service_category_id',
+        'start_time',
+        'end_time',
+        'county_id',
+        'subcounty_id',
+        'ward_id',
+        'area_id',
+        // Add other fillable attributes here
     ];
-    
 
-
-
-    public function user(): BelongsTo
+    public function customer()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Customer::class);
     }
 
-    /**
-     * Define a many-to-one relationship with the Item model.
-        */
-        public function items()
+    public function serviceProvider()
     {
-        return $this->belongsToMany(Item::class);
+        return $this->belongsTo(ServiceProvider::class);
     }
 
-    public function room()
+    public function service()
     {
-        return $this->belongsTo(Room::class, 'room_id');
-    }
-    public function acceptedByUser()
-    {
-        return $this->belongsTo(User::class, 'accepted_by_user_id');
+        return $this->belongsTo(Service::class);
     }
 
-    public function declinedByUser()
+    public function serviceCategory()
     {
-        return $this->belongsTo(User::class, 'declined_by_user_id');
+        return $this->belongsTo(ServiceCategory::class);
     }
+
+    // Define other relationships and methods as needed
 }
+

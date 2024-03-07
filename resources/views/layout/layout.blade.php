@@ -405,6 +405,66 @@
       @endif
       
 
+      @if(auth()->user()->role == 2)
+      <li class="nav-item">
+        <a class="nav-link " href="{{ route('subdashboard') }}">
+          <i class="bi bi-grid fs-4"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide fs-4"></i><span>User Management</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+    <a class="nav-link" href="{{ route('superAdminUsers') }}">
+        <i class="bi bi-person fs-4"></i><span>Clients</span>
+    </a>
+</li>
+
+
+
+        </ul>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text fs-4"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a class="nav-link" href="{{ route('subadminreservation') }}">
+              <i class="bi bi-calendar2-check fs-4"></i><span>Today's Orders</span>
+          </a>
+      </li>
+      <li>
+          <a class="nav-link" href="forms-layouts.html">
+              <i class="bi bi-calendar2 fs-4"></i><span>All Orders</span>
+          </a>
+      </li>
+      <li>
+          <a class="nav-link" href="forms-editors.html">
+              <i class="bi bi-check2 fs-4"></i><span>Accepted Orders</span>
+          </a>
+      </li>
+
+          
+        </ul>
+      </li><!-- End Forms Nav -->
+     
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('sdashboard') }}">
+          <i class="bi bi-building fs-4"></i>
+          <span>Services</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+     
+      @endif
+      
+
      
 
       

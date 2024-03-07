@@ -152,6 +152,11 @@ Route::group(['middleware' => ['web', 'isUser', 'verified']], function () {
     Route::resource('appointments', BookingController::class);
     Route::get('/profile', [UserController::class, 'showProfile'])->name('user.profile.show');
     Route::post('/profile/update-password', [UserController::class, 'updatePassword'])->name('updatePassword');
+    Route::get('/get-subcounties-by-county', [UserController::class, 'getSubcountiesByCounty'])->name('getSubcountiesByCounty');
+        Route::get('/get-wards-by-subcounty', [UserController::class, 'getWardsBySubcounty'])->name('getWardsBySubcounty');
+        Route::get('/get-areas-by-ward', [UserController::class, 'getAreasByWard'])->name('getAreasByWard');
+        Route::get('/search-service-providers', [UserController::class, 'searchServiceProviders'])->name('searchServiceProviders');
+        
 
 });
 Route::get('/get-bookings', [BookingController::class, 'getBookings']);

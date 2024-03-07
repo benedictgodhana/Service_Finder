@@ -128,7 +128,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8" style="width:1800px">
-        <div class="card" style="width:100%; background-color: rgba(255, 255, 255, 0.5);border-radius:10px">
+        <div class="card" style="width:100%; background-color: rgba(255, 255, 255, 0.5);border-radius:10px;">
                 <div class="card-header">{{ $category->name }}</div>
 <!-- HTML for danger alert with login and register links -->
 <div id="dangerAlert" class="alert alert-primary text-center" style="display: none;width:100%" role="alert"><i class="fa-solid fa-triangle-exclamation" style="color: #000000;"></i>
@@ -138,7 +138,7 @@
                 <div class="card-body elevation-23">
                     <p>{{ $category->description }}</p>
                     <form id="searchForm">
-                        <h4>Services:</h4>
+                        <h4 style="font-weight:800">Services:</h4>
                         @if($category->services->count() > 0)
                             <select class="form-select mb-3" id="serviceDropdown">
                                 <option value="">Select Service</option>
@@ -150,7 +150,7 @@
                             <!-- Dynamic Dropdowns -->
                             <div class="row mb-3">
                                 <div class="col-md-3">
-                                    <label for="county" class="form-label">County:</label>
+                                    <label for="county" class="form-label" style="font-weight:800">County:</label>
                                     <select class="form-select" id="county">
                                         <option value="">Select County</option>
                                         @foreach($counties as $county)
@@ -159,26 +159,26 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3">
-                                    <label for="subcounty" class="form-label">Subcounty:</label>
+                                    <label for="subcounty" class="form-label" style="font-weight:800">Subcounty:</label>
                                     <select class="form-select" id="subcounty">
                                         <option value="">Select Subcounty</option>
                                     </select>
                                 </div>
                                 <div class="col-md-3">
-                                    <label for="ward" class="form-label">Ward:</label>
+                                    <label for="ward" class="form-label" style="font-weight:800">Ward:</label>
                                     <select class="form-select" id="ward">
                                         <option value="">Select Ward</option>
                                     </select>
                                 </div>
                                 <div class="col-md-3">
-                                    <label for="area" class="form-label">Area:</label>
+                                    <label for="area" class="form-label" style="font-weight:800">Area:</label>
                                     <select class="form-select" id="area">
                                         <option value="">Select Area</option>
                                     </select>
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn elevation-3" id="searchButton" style="width:100%; background: gold; color: black;">
+                            <button type="submit" class="btn elevation-3" id="searchButton" style="width:100%; background: gold; color: black;font-weight:800">
                             <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span> <!-- Loading spinner -->
                             Search
                         </button>
@@ -328,10 +328,9 @@
                         <div class="card-body">
                             <h5 class="card-title">${result.service_provider_name}</h5>
                             <p class="card-text">Service Offered: ${result.service_name}</p>
-                            <button class="btn btn-primary" style="border-radius: 20px; width: 100%;">
-    <i class="fas fa-shopping-cart"></i> Place Order
-</button>
-
+                            <button class="btn btn-primary elevation-23" style="border-radius: 20px; width: 100%;">
+                                <i class="fas fa-shopping-cart" style="color:gold"></i> Place Order
+                            </button>
                         </div>
                     </div>
                 </div>
